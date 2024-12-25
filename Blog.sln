@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogAppServer", "BlogAppServer\BlogAppServer.csproj", "{DE2665A1-152F-4D30-BB46-4AF138C93658}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApp.Server", "BlogAppServer\BlogApp.Server.csproj", "{DE2665A1-152F-4D30-BB46-4AF138C93658}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApp.Shared", "BlogApp.Shared\BlogApp.Shared.csproj", "{5F14E30B-351E-4E26-BAF5-5F3D22622DC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DE2665A1-152F-4D30-BB46-4AF138C93658}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE2665A1-152F-4D30-BB46-4AF138C93658}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE2665A1-152F-4D30-BB46-4AF138C93658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F14E30B-351E-4E26-BAF5-5F3D22622DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F14E30B-351E-4E26-BAF5-5F3D22622DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F14E30B-351E-4E26-BAF5-5F3D22622DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F14E30B-351E-4E26-BAF5-5F3D22622DC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
