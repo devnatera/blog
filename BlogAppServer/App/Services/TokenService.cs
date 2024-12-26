@@ -27,7 +27,7 @@ namespace BlogApp.Server.App.Services
         public string GenerateToken(string userId)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_jwtConfig.SecretKey);
+            var key = Encoding.UTF8.GetBytes(_jwtConfig.SecretKey);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
@@ -36,8 +36,8 @@ namespace BlogApp.Server.App.Services
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(_jwtConfig.TokenLifetimeMinutes),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
-                Issuer = _jwtConfig.Issuer,
-                Audience = _jwtConfig.Audience
+                //Issuer = _jwtConfig.Issuer,
+                //Audience = _jwtConfig.Audience
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
@@ -57,12 +57,12 @@ namespace BlogApp.Server.App.Services
         {
             var tokenValidationParameters = new TokenValidationParameters
             {
-                ValidateIssuer = true,
-                ValidateAudience = true,
+                ValidateIssuer = false,
+                ValidateAudience = false,
                 ValidateLifetime = false,
                 ValidateIssuerSigningKey = true,
-                ValidIssuer = _jwtConfig.Issuer,
-                ValidAudience = _jwtConfig.Audience,
+                //ValidIssuer = _jwtConfig.Issuer,
+                //ValidAudience = _jwtConfig.Audience,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_jwtConfig.SecretKey))
             };
 

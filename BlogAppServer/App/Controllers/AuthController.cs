@@ -14,14 +14,12 @@ namespace BlogApp.Server.App.Controllers
     public class AuthController : ControllerBase
     {
         private readonly UserManager<UsuarioAplicacion> _userManager;
-        private readonly SignInManager<UsuarioAplicacion> _signInManager;
         private readonly ITokenService _tokenService;
         private readonly JwtConfig _jwtConfig;
 
-        public AuthController(UserManager<UsuarioAplicacion> userManager, SignInManager<UsuarioAplicacion> signInManager, ITokenService tokenService, IOptions<JwtConfig> jwtSettings)
+        public AuthController(UserManager<UsuarioAplicacion> userManager, ITokenService tokenService, IOptions<JwtConfig> jwtSettings)
         {
             _userManager = userManager;
-            _signInManager = signInManager;
             _tokenService = tokenService;
             _jwtConfig = jwtSettings.Value;
         }
