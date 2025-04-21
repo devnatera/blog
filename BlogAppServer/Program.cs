@@ -16,7 +16,7 @@ builder.Services.AddSwaggerWithJwt();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString") ?? throw new InvalidOperationException("Connection string 'ConnectionString' not found.")));
 
-builder.Services.ConfigureAuth(builder.Configuration);
+//builder.Services.ConfigureAuth(builder.Configuration);
 
 builder.Services.AddTransient<ITokenService, TokenService>();
 
@@ -45,8 +45,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
-app.UseAuthorization();
+//app.UseAuthentication();
+//app.UseAuthorization();
 
 app.UseCors();
 
